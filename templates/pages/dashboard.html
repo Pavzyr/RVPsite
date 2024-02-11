@@ -1,0 +1,147 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-chart">
+                <div class="card-header ">
+                        <h2 align="center" class="card-title">ALL GAMES STATS 2024</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h2 align="center" class="card-title">WINs</h2>
+                    <h1 align="center">{{ wins.pasha_potnii }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h2 align="center" class="card-title">DEFEATs</h2>
+                    <h1 align="center">{{ defeats.pasha_potnii }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h1 align="center" class="card-title">MVPs</h1>
+                    <h1 align="center">  </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 align="center" class="card-title">ПАША ПОТНЫЙ</h4>
+                    <h1 align="center">{{ stars.pasha_potnii }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 align="center" class="card-title">ВЛАДОС КАБАРДОС</h4>
+                    <h1 align="center">{{ stars.vlados_cabardos }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 align="center" class="card-title">ЕГОР ХАРДКОР</h4>
+                    <h1 align="center">{{ stars.egor_hardcore }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 align="center" class="card-title">МИРОН ПРИТОН</h4>
+                    <h1 align="center">{{ stars.miron_priton }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 align="center" class="card-title">ВОЛОДЯ ПОДКИДНОЙ</h4>
+                    <h1 align="center">{{ stars.volod9_podkidnoi }}</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card ">
+                <div class="card-body">
+                    <div class="table-responsive" style="overflow-x:auto;">
+                        <style>
+                        /* Стили для таблицы */
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+                        th, td{
+                            padding: 8px;
+                            font-size: 25px;
+                            text-align: center;
+                            border: 1px solid black;
+                        }
+                        td:first-child {
+                            text-align: left;
+                        }
+                        </style>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                    </th>
+                                    <th>
+                                        ПАША ПОТНЫЙ
+                                    </th>
+                                    <th>
+                                        ВЛАДОС КАБАРДОС
+                                    </th>
+                                    <th>
+                                        ЕГОР ХАРДКОР
+                                    </th>
+                                    <th>
+                                        МИРОН ПРИТОН
+                                    </th>
+                                    <th>
+                                        ВОЛОДЯ ПОДКИДНОЙ
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for stat in general_list %}
+                                {% if stat.key != 'винов' and stat.key != 'лузов' and stat.key != 'время в игре'  and stat.key != 'забрал таурок с геральдом' %}
+                                <tr>
+                                    <td>Всего {{ stat.key }}</td>
+                                    <td>{{ stat.pasha_potnii }}</td>
+                                    <td>{{ stat.vlados_cabardos }}</td>
+                                    <td>{{ stat.egor_hardcore }}</td>
+                                    <td>{{ stat.miron_priton }}</td>
+                                    <td>{{ stat.volod9_podkidnoi }}</td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
