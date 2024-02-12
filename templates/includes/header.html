@@ -1,0 +1,19 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'general_stats:index' %}">
+        RUSSIAN VODKA PREMADE
+      </a>
+      {% with request.resolver_match.view_name as view_name %}        
+        <ul class="nav  nav-pills">
+          <li class="nav-item">              
+            <a class="nav-link {% if view_name == 'general_stats:index' %} active {% endif %}" href="{% url 'general_stats:index' %}">
+              Общая статистика
+            </a>
+          </li>
+        </ul>
+      {% endwith %}      
+    </div>
+  </nav> 
+</header>

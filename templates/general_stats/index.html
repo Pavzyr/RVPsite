@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+  Общая статистика RVP
+{% endblock %}
+{% block content %}
+<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ПАША ПОТНЫЙ</th>
+                    <th>ВЛАДОС КАБАРДОС</th>
+                    <th>ЕГОР ХАРДКОР</th>
+                    <th>МИРОН ПРИТОН</th>
+                    <th>ВОЛОДЯ ПОДКИДНОЙ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Django цикл для вывода значений из таблицы -->
+                {% for stat in general_list %}
+                <tr>
+                    <td>{{ stat.key }}</td>
+                    <td>{{ stat.pasha_potnii }}</td>
+                    <td>{{ stat.vlados_cabardos }}</td>
+                    <td>{{ stat.egor_hardcore }}</td>
+                    <td>{{ stat.miron_priton }}</td>
+                    <td>{{ stat.volod9_podkidnoi }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
