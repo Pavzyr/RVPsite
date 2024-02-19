@@ -1,0 +1,21 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-light" style="background-color: lightskyblue">
+      <div class="container">
+        <ul class="nav  nav-pills">
+          <li class="nav-item {% if view_name == 'main' %}active{% endif %}">
+            <a class="nav-link" 
+              href="{% url 'main:index' %}">
+              Игры
+            </a>
+          </li>
+          <li class="nav-item {% if view_name == 'general_stats' %}active{% endif %}">
+            <a class="nav-link" 
+              href="{% url 'general_stats' %}">
+              Общая статистика
+            </a>
+          </li>
+        </ul>      
+      </div>
+    </nav> 
+</header>
