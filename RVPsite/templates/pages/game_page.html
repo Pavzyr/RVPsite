@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Статка по игре</title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container py-5">
+      {% for game in game_list %}
+      <div class = "container py-1">
+        <a> {{ game.player_nick }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}

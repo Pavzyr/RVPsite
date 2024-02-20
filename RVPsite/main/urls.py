@@ -23,5 +23,6 @@ app_name = 'main'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('refresh_game_id/', views.refresh_game_id, name='refresh_game_id'),
     path('<slug:game_id>/', views.game_detail, name='game_detail'),
 ]
