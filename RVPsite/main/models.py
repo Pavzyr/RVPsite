@@ -3,6 +3,8 @@ from django.db import models
 
 class GameId(models.Model):
     game_id = models.TextField(unique=True, blank=True, null=True)
+    win = models.TextField(blank=True, null=True)
+    date = models.TextField(blank=True, null=True)
 
 
 class GameStat(models.Model):
